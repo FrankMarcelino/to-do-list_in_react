@@ -2,7 +2,7 @@ import TaaskItem from "./TaskItem";
 
 const ItemsContainer = ({ taskList, removeFromList }) => {
   return (
-    <div>
+    <div className="items-container">
       {taskList.map((task) => (
         <TaaskItem task={task} removeFromList={removeFromList} />
       ))}

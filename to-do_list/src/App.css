@@ -43,5 +43,24 @@
 
 .task-item{
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  & > p {
+    width: 80%;
+  }
+}
+
+.items-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-items-container{
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  & > input {
+    width: 80%;
+  }
 }
