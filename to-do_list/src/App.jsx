@@ -5,23 +5,23 @@ import AddItemsContainer from "./AddItemsContainer";
 import "./App.css";
 
 function App() {
-  const [taskList, setTaskList] = useState([
-    "lavar o carro",
-    "estudar",
-    "treinar",
-  ]);
+  const [taskList, setTaskList] = useState([]);
 
-  const removeFromList = (item) => {
+  const removeFromList = (task) => {
     const newList = [...taskList];
-    const itemIndex = newList.indexOf(item);
+    const itemIndex = newList.indexOf(task);
     newList.splice(itemIndex, 1);
     setTaskList(newList);
+  };
+
+  const addToList = (task) => {
+    setTaskList([...taskList, task]);
   };
 
   return (
     <div className="App">
       <h1>Lista de Tarefas Para Hoje</h1>
-      <AddItemsContainer addToList={setTaskList} />
+      <AddItemsContainer addToList={addToList} />
       <ItemsContainer taskList={taskList} removeFromList={removeFromList} />
     </div>
   );
