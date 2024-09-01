@@ -60,6 +60,7 @@
   display: flex;
   gap: 1rem;
   justify-content: space-around;
+  margin-bottom: 20px;
   & > input {
     width: 80%;
   }

@@ -1,20 +1,28 @@
 const AddItemsContainer = ({ addToList }) => {
+  let newTask = "";
   return (
     <div className="add-items-container">
       <input
         type="text"
         placeholder="digite sua tarefa"
-        onKeyPress={(event) => {
+        onKeyDown={(event) => {
           if (event.key === "Enter") {
-            addToList(event.target.value);
-            event.target.value = "";
+            if (newTask != "") {
+              addToList(newTask);
+              document.querySelector("input").value = "";
+            }
           }
+        }}
+        onChange={(event) => {
+          newTask = event.target.value;
         }}
       />
       <button
         onClick={() => {
-          addToList(document.querySelector("input").value);
-          document.querySelector("input").value = "";
+          if (newTask != "") {
+            addToList(newTask);
+            document.querySelector("input").value = "";
+          }
         }}
       >
         Adicionar
