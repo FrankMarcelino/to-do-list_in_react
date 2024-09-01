@@ -1,9 +1,10 @@
-const taskList = ({ taskList }) => {
+const TaaskItem = ({ task, removeFromList }) => {
   return (
-    <div>
-      <p>{taskList[0]}</p>
+    <div className="task-item">
+      <p>{task}</p>
+      <button onClick={() => removeFromList(task)}>Remover</button>
     </div>
   );
 };
 
-export default taskList;
+export default TaaskItem;

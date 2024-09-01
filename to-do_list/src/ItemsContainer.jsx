@@ -1,8 +1,10 @@
-const ItemsContainer = ({ taskList }) => {
+import TaaskItem from "./TaskItem";
+
+const ItemsContainer = ({ taskList, removeFromList }) => {
   return (
     <div>
-      {taskList.map((item) => (
-        <p>{item}</p>
+      {taskList.map((task) => (
+        <TaaskItem task={task} removeFromList={removeFromList} />
       ))}
     </div>
   );
